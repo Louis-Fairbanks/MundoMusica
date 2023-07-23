@@ -30,27 +30,17 @@ function MiddleSignup(props){
             headers: {"Content-Type": "application/json", 'Authorization': bearerString},
             body: JSON.stringify(userInfo)
         }).then(response => response.json()).then(data => {
-            let dataMessage = data.message;
-            console.log(dataMessage)
-            if (dataMessage === ("User update unsuccessful")){
-                console.log("User update unsuccessful")
-                return;
-            } else if (dataMessage === "User not found"){
-                console.log("User not found")
-                return;
-            } 
-            else if (dataMessage === "User updated!"){
+            if (data.message){
+                console.log(data.message)
+            } else if(data.accessToken){
+                console.log(data.accessToken)
+                cookies.remove('jwt_authorization')
+                cookies.set('jwt_authorization', data.accessToken)
                 return navigate('/account');
-            }else{ return;}
+            }
+            else{ return;}
     });
 }
-// function getCookies(){
-//     const cookies = document.cookie.split(';').reduce((acc, cookie) => {
-//         const [name, value] = cookie.trim().split('=');
-//         return { ...acc, [name]: value };
-//       }, {});
-//       return cookies;
-// }
 
     return <div id="middleSignup">
             <h1>Welcome {props.firstName}!</h1>
@@ -59,7 +49,8 @@ function MiddleSignup(props){
                     <form>
                         <input onChange={(e) => setAge(e.target.value)} placeholder="Age"></input>
                         <input onChange={(e) => setAbout(e.target.value)} placeholder="About"></input>
-                        <input onChange={(e) => setLocation(e.target.value)} placeholder="Location"></input>
+                        <input onChange={(e) => setLocation(e.target.value)} placeholder="Location"></input>                   
+                        <input type="file" accept="image/*"></input>
                         {/* <div className="imgContainer">
                             <input onChange={setPhoto} type="file" accept="image/*"></input>
                         </div> */}
