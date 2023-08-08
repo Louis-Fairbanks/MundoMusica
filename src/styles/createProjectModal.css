@@ -1,0 +1,32 @@
+#CreateProjectModal{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    background-color: aliceblue;
+    height: 600px;
+    width: 150vh;
+    position: absolute;
+    top: -190px;
+    left: -25px;
+    align-items: center;
+    justify-content: center;
+}
+#CreateProjectModal h1{
+    font-size: 3em;
+}
+#CreateProjectModal input{
+    width: 400px;
+    height: 30px;
+    padding: 5px;
+    margin: 5px;
+    border-radius: 5px;
+}
+#CreateProjectModal button{
+    height: 50px;
+    width: 410px;
+    border-radius: 10px;
+    margin-left: 6px;
+    background-color: rgb(25, 217, 223);
+    color: white;
+    font-size: 2.20em;
+}

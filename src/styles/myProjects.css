@@ -1,0 +1,88 @@
+#myProjects{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items:first baseline;
+}
+
+#myProjects h1{
+    font-size: 3.5em;
+    margin-left: 30px;
+    margin-bottom: 20px;
+}
+#createProjectButton{
+    height: 50px;
+    background-color: rgb(100, 179, 22);
+    color: rgb(82, 75, 75);
+    font-size: 2rem;
+    border-radius: 10px;
+    padding: 5px;
+}
+#myProjects nav{
+    display: flex;
+    flex-direction: row;
+}
+#myProjects nav li{
+    display: flex;
+    flex-direction: row;
+    font-size: 2rem;
+    border: 2px;
+    margin: 20px 50px 20px 10px;
+}
+#myProjects nav ul{
+    margin-left: 0;
+    padding-left: 0;
+    display: flex;
+    flex-direction: row;
+}
+.projectsArea{
+    border:black;
+    border-style: solid;
+    height: fit-content;
+    width: 1130px;
+    position: absolute;
+    top: 300px;
+    left: 280px;
+}
+
+#projectsList{
+    font-size: 1rem;
+    width: 145px;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: first baseline;
+    border-right-style: solid;
+}
+#projectsList button{
+    padding: 7px 6px 7px 6px;
+    width: 100%;
+    border-bottom-style: solid;
+    font-size: 1rem;
+    display: inline;
+}
+#selectedSection{
+    width: fit-content;
+    display: inline;
+}
+#projectsList button:hover{
+    background-color: rgb(200, 200, 213);
+    color: rgb(243, 243, 246);
+}
+#detailsSection, #instrumentsSection, #participantsSection{
+    display: inline-flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+#detailsSection h2, h5, p{
+    display: inline-flex;
+    flex-direction: column;
+    margin: 0 0 10px 20px;
+    position: inherit;
+    font-size: large;
+}
+#participantsSection h3{
+    margin-top: 0;
+}
+#instrumentsSection h3{
+    margin-top: 0;
+}
